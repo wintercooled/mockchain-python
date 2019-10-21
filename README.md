@@ -1,6 +1,6 @@
 # mockchain-python
 
-A little example of Bitcoin blockchain basics* written in Python.
+A little example of Bitcoin blockchain basics (very much so!) written in Python.
 
 A work in progress and a starting point for looking into things like digitial signatures, 
 hashing, block sequence etc. 
@@ -149,5 +149,3 @@ Introduce dificulty adjustments
 Introduce transaction fees
 
 Use base56 not base64 encoding for public keys
-
-* well, very, very basic actually!
