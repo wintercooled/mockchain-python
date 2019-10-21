@@ -2,7 +2,7 @@
 
 A little example of Bitcoin blockchain basics (very much so!) written in Python.
 
-A work in progress and a starting point for looking into things like digitial signatures, 
+A work in progress and a starting point for looking into things like digital signatures, 
 hashing, block sequence etc. 
 
 Might be good if you were learning Python as well and wanted to build the example out yourself.
