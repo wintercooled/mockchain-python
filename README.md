@@ -130,15 +130,24 @@ Example completed without errors.
 
 # Work in progress notes...
 
-[ ] Remove use of hashlib.sha256 and replace with SHA256.new() etc
-[ ] Some code should use transaction.signed_to_string not unsigned_to_string(?)
-[ ] Introduce the concept of UTXOs, addresses, wallet balances
-[ ] Enable the sharing of transactions between nodes
-[ ] Enable the competitive mining of blocks between nodes
-[ ] Enable the concept of longest, most worked on valid chain
-[ ] Introduce mining rewards and halvings
-[ ] Introduce dificulty adjustments
-[ ] Introduce transaction fees
-[ ] Use base56 not base64 encoding for public keys
+Remove use of hashlib.sha256 and replace with SHA256.new() etc
+
+Some code should use transaction.signed_to_string not unsigned_to_string(?)
+
+Introduce the concept of UTXOs, addresses, wallet balances
+
+Enable the sharing of transactions between nodes
+
+Enable the competitive mining of blocks between nodes
+
+Enable the concept of longest, most worked on valid chain
+
+Introduce mining rewards and halvings
+
+Introduce dificulty adjustments
+
+Introduce transaction fees
+
+Use base56 not base64 encoding for public keys
 
 * well, very, very basic actually!
