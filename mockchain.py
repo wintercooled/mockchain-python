@@ -67,7 +67,7 @@ class Node:
             self._signer = PKCS1_v1_5.new(self._private_key)
             # Export the public key in a useful format
             exported_public_key = self._public_key.export_key(format='OpenSSH').decode('UTF-8')
-            pubkey_b64_encoded_bytes = base64.b64encode(bytes(exported_public_key))
+            pubkey_b64_encoded_bytes = base64.b64encode(bytes(exported_public_key.encode('UTF-8')))
             self.pub_key_encoded = pubkey_b64_encoded_bytes.decode('UTF-8')
 
         @property
