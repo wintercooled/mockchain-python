@@ -67,7 +67,7 @@ class Node:
             self._signer = PKCS1_v1_5.new(self._private_key)
             # Export the public key in a useful format
             exported_public_key = self._public_key.export_key(format='OpenSSH').decode('UTF-8')
-            pubkey_b64_encoded_bytes = base64.b64encode(bytes(exported_public_key, 'UTF-8'))
+            pubkey_b64_encoded_bytes = base64.b64encode(bytes(exported_public_key))
             self.pub_key_encoded = pubkey_b64_encoded_bytes.decode('UTF-8')
 
         @property
@@ -154,7 +154,8 @@ class Node:
                         i += 1
 
 
-    class Mining:        
+    class Mining:
+        @staticmethod
         def generate_block(mempool_transactions, previous_block, difficulty):
             block = Block()
             for transaction in mempool_transactions.get_transactions:
@@ -169,7 +170,8 @@ class Node:
             for transaction in block.get_transactions:
                 mempool_transactions.remove_transaction(transaction)
             return block
-        
+
+        @staticmethod
         def mine(block, difficulty=1, height=0):
             utils = CryptographyUtils()
             nonce = None
@@ -316,14 +318,16 @@ class Transaction:
 
 
 class CryptographyUtils:
+    @staticmethod    
     def sha256(message):
         return hashlib.sha256(message.encode('ascii')).hexdigest()
-        
+    
+    @staticmethod
     def verify_signature(signature, pub_key, message):
         # Get signature in a format we can use to verify
-        signature_b64_decoded_bytes = base64.b64decode(bytes(signature, 'UTF-8'))
+        signature_b64_decoded_bytes = base64.b64decode(bytes(signature.encode('UTF-8')))
         # Get pubkey in a format we can use to verify
-        pubkey_b64_decoded = base64.b64decode(bytes(pub_key, 'UTF-8'))
+        pubkey_b64_decoded = base64.b64decode(bytes(pub_key.encode('UTF-8')))
         if '' == signature or '' == pub_key:
             raise Exception('No signature, public key combination provided')
         # Import the public key
@@ -337,7 +341,8 @@ class CryptographyUtils:
             return True
         except:
             return False
-            
+
+    @staticmethod
     def verify_pow(block, difficulty=1):
         prefix = '0' * difficulty
         digest = CryptographyUtils.sha256(str(block.get_block_data_as_string) + str(block.nonce))
