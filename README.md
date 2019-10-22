@@ -1,7 +1,5 @@
 # mockchain-python
 
-Known issues: see Issues tab - doesn't work with python3 (arghhh).
-
 A little example of Bitcoin blockchain basics (very much so!) written in Python.
 
 A work in progress and a starting point for looking into things like digital signatures, 
@@ -14,7 +12,7 @@ Might be good if you were learning Python as well and wanted to build the exampl
 
 Tested on Raspbian, but should work the same on other Linux distros.
 
-You'll need python and pip and virtualenv set up first.
+You'll need python (3+) and pip and virtualenv set up first.
 
 Git clone this repository to your machine then from the terminal...
 
