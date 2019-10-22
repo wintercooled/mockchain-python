@@ -1,5 +1,7 @@
 # mockchain-python
 
+Known issues: see Issues tab - doesn't work with python3 (arghhh).
+
 A little example of Bitcoin blockchain basics (very much so!) written in Python.
 
 A work in progress and a starting point for looking into things like digital signatures, 
